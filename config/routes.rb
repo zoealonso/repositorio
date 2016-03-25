@@ -1,4 +1,38 @@
 Rails.application.routes.draw do
+
+
+  get 'puntuaciones/index'
+
+  devise_for :usuarios, :controllers => {
+    :sessions => 'usuario/sessions',
+    :registrations => 'usuario/registrations',
+    :passwords => 'usuario/password'
+    }
+
+  post 'registrar' => 'servicio/usuarios#registrar'
+  post 'login' => 'servicio/usuarios#login'
+
+  post 'juegos/registrar' => 'servicio/juegos#registrar'
+  post 'juegos/comprobar' => 'servicio/juegos#comprobar_nombre'
+
+  post 'puntuaciones/registrar' => 'servicio/puntuaciones#registrar'
+  post 'puntuaciones/mejores' => 'servicio/puntuaciones#mejores'
+
+  root 'inicio#inicio'
+  
+  get 'mis-juegos' => 'juegos#mis_juegos'
+  
+  get 'juegos' => 'juegos#index'
+  get 'buscar' => 'juegos#buscar'
+  
+  get 'puntuaciones/:juego_id' => 'puntuaciones#index', :as => 'puntuaciones_juego'
+  
+  get 'puntuaciones/niveles/:puntuacion_id' => 'niveles#index', :as => 'puntuaciones_por_nivel'
+
+  devise_scope :usuario do
+   get "mi-cuenta", to: "devise/passwords#edit"
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+token1:
+  id: 1
+  usuario_id: 1 
+  juego_id: 1
+  token: TOKEN
+
+token2:
+  id: 2
+  usuario_id: 1 
+  juego_id: 2
+  token: TOKEN
+
+token3:
+  id: 3
+  usuario_id: 2 
+  juego_id: 1
+  token: TOKEN
+
+token4:
+  id: 4
+  usuario_id: 2 
+  juego_id: 4
+  token: TOKEN
+
+token5:
+  id: 5
+  usuario_id: 2 
+  juego_id: 5
+  token: TOKEN
+
+token6:
+  id: 6
+  usuario_id: 2 
+  juego_id: 6
+  token: TOKEN
+
+token7:
+  id: 7
+  usuario_id: 2 
+  juego_id: 7
+  token: TOKEN
+
+token8:
+  id: 8
+  usuario_id: 2 
+  juego_id: 8
+  token: TOKEN
+
+token9:
+  id: 9
+  usuario_id: 2 
+  juego_id: 9
+  token: TOKEN
+
+token10:
+  id: 10
+  usuario_id: 2 
+  juego_id: 10
+  token: TOKEN

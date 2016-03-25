@@ -14,3 +14,8 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.plural(/^(.+(n|l))$/i, '\1es')
+  inflect.singular(/^(.+(n|l))es$/i, '\1')
+end

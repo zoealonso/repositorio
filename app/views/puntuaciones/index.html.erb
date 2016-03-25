@@ -1,0 +1,40 @@
+<% content_for :opcion, 'juegos' %>
+<% content_for :titulo do %>
+	Puntuaciones de <%= @juego.nombre %>
+<% end %>
+<% content_for :subtitulo do %>
+	Aquí se mostrarán todas las puntuaciones obtenidas en el juego <%= @juego.nombre %>
+<% end %>
+
+<% if !request.referer.nil? && request.referer.end_with?('mis-juegos') %>
+	<ol class="breadcrumb">
+	  <li><%= link_to 'Mis Juegos', mis_juegos_path %></li>
+	  <li class="active">Puntuaciones en <%= @juego.nombre %></li>
+	</ol>
+<% else %>
+	<ol class="breadcrumb">
+	  <li><%= link_to 'Juegos', root_path %></li>
+	  <li class="active">Puntuaciones en <%= @juego.nombre %></li>
+	</ol>
+<% end %>
+
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Usuario</th>
+			<th>Puntuación</th>		
+		</tr>
+	</thead>
+	<tbody>
+		<% @puntuaciones.each do |puntuacion| %>
+			<tr>
+				<td>
+					<%= link_to puntuacion.usuario.nombre, puntuaciones_por_nivel_path(puntuacion.id) %>	
+				</td>
+				<td>
+					<%= puntuacion.puntos %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+

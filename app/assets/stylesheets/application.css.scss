@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+ */
+
+$navbar-default-bg: #ffffff;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin fondo-azul {
+  background: #1e5799; /* Old browsers */
+  background: -moz-linear-gradient(top,  #1e5799 0%, #429ee5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #1e5799 0%,#429ee5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #1e5799 0%,#429ee5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#429ee5',GradientType=0 ); /* IE6-9 */
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+#titulo {
+  
+  @include fondo-azul;
+  
+  margin-top: 50px;
+  min-height: 110px;
+
+  h1 {
+    font-weight: bold;
+    color: #ffffff;
+  }
+  p {
+    font-weight: bold;
+    color: #ABCAEA;
+  }
+}
+
+.contenedor-paginador {
+  text-align: right;
+}
+
+#buscar{
+  margin-left: 250px;
+}
+
+/* User sign in and sign forms. */
+.contenedor-border-form-div {
+  display: table-cell;
+  vertical-align: middle;
+  
+  .alert {
+    width: 500px;
+    margin: 0 auto 20px auto;
+  }
+  
+}
+
+.border-form-div {
+  max-width: 325px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+
+  .form-signin-heading,
+  .checkbox {
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    padding: 7px 9px;
+  }
+  
+  .botones {
+    text-align: right;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body.inicio {
+  height: 100%;
+  width: 100%;
+  @include fondo-azul;
+  display: table;
+}
+
+.alert {
+  margin: 1em 0;
+}
+
+table .puntuacion {
+  text-align: center;
+}
+
+.caracteres{
+  text-align: right;
+  font-style: italic;
+}
+
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+  background-color: #D8D8D8;
+  color:#000000;
+}

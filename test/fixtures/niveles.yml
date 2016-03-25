@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+nivel1:
+  id: 1
+  numero: 1
+  puntos: 10
+  puntuacion_id: 1
+  
+nivel2:
+  id: 2
+  numero: 2
+  puntos: 20
+  puntuacion_id: 2
+
+nivel3:
+  id: 3
+  numero: 3
+  puntos: 15
+  puntuacion_id: 3

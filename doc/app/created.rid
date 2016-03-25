@@ -1,0 +1,20 @@
+Fri, 29 Jan 2016 12:40:24 +0100
+README.rdoc	Tue, 25 Aug 2015 18:01:26 +0200
+app/controllers/application_controller.rb	Tue, 05 Jan 2016 17:20:58 +0100
+app/controllers/juegos_controller.rb	Fri, 29 Jan 2016 12:29:06 +0100
+app/controllers/niveles_controller.rb	Fri, 29 Jan 2016 12:31:40 +0100
+app/controllers/puntuaciones_controller.rb	Fri, 29 Jan 2016 12:33:44 +0100
+app/controllers/servicio/juegos_controller.rb	Tue, 05 Jan 2016 17:21:20 +0100
+app/controllers/servicio/puntuaciones_controller.rb	Thu, 21 Jan 2016 18:17:07 +0100
+app/controllers/servicio/servicio_controller.rb	Tue, 05 Jan 2016 17:20:31 +0100
+app/controllers/servicio/usuarios_controller.rb	Wed, 20 Jan 2016 23:38:16 +0100
+app/controllers/usuario/password_controller.rb	Wed, 27 Jan 2016 02:09:31 +0100
+app/controllers/usuario/registrations_controller.rb	Thu, 14 Jan 2016 16:43:30 +0100
+app/controllers/usuario/sessions_controller.rb	Fri, 04 Dec 2015 11:22:27 +0100
+app/helpers/application_helper.rb	Fri, 25 Dec 2015 19:02:57 +0100
+app/helpers/niveles_helper.rb	Fri, 18 Dec 2015 11:38:22 +0100
+app/models/juego.rb	Fri, 29 Jan 2016 12:29:06 +0100
+app/models/nivel.rb	Fri, 29 Jan 2016 12:32:42 +0100
+app/models/puntuacion.rb	Fri, 29 Jan 2016 12:35:56 +0100
+app/models/token_acceso.rb	Fri, 29 Jan 2016 12:37:35 +0100
+app/models/usuario.rb	Thu, 21 Jan 2016 18:37:34 +0100

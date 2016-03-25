@@ -1,0 +1,15 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"Juego" [shape=Mrecord, label="{Juego|id :int(11)\lnombre :varchar(255)\l}"]
+	"Nivel" [shape=Mrecord, label="{Nivel|id :int(11)\lnumero :varchar(255)\lpuntos :int(11)\lpuntuacion_id :int(11)\l}"]
+	"Puntuacion" [shape=Mrecord, label="{Puntuacion|id :int(11)\lpuntos :int(11)\ljuego_id :int(11)\lusuario_id :int(11)\l}"]
+	"TokenAcceso" [shape=Mrecord, label="{TokenAcceso|id :int(11)\ltoken :varchar(255)\lusuario_id :int(11)\ljuego_id :int(11)\l}"]
+	"Usuario" [shape=Mrecord, label="{Usuario|id :int(11)\lemail :varchar(255)\lencrypted_password :varchar(255)\lreset_password_token :varchar(255)\lreset_password_sent_at :datetime\lremember_created_at :datetime\lcreated_at :datetime\lupdated_at :datetime\lnombre :varchar(255)\l}"]
+	"Juego" -> "TokenAcceso" [arrowtail=odot, arrowhead=crow, dir=both color="#6C77A6"]
+	"ActiveRecord::Base" -> "Juego" [label="", arrowhead="none", arrowtail="onormal"]
+	"ActiveRecord::Base" -> "Nivel" [label="", arrowhead="none", arrowtail="onormal"]
+	"Puntuacion" -> "Nivel" [arrowtail=odot, arrowhead=crow, dir=both color="#66AF29"]
+	"ActiveRecord::Base" -> "Puntuacion" [label="", arrowhead="none", arrowtail="onormal"]
+	"ActiveRecord::Base" -> "TokenAcceso" [label="", arrowhead="none", arrowtail="onormal"]
+	"ActiveRecord::Base" -> "Usuario" [label="", arrowhead="none", arrowtail="onormal"]
+}

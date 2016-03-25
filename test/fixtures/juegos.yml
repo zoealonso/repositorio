@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+juego1:
+  id: 1
+  nombre: Juego 1
+
+juego2:
+  id: 2
+  nombre: Juego 2
+
+juego3:
+  id: 3
+  nombre: Juego 3
+
+juego4:
+  id: 4
+  nombre: Juego 4
+
+juego5:
+  id: 5
+  nombre: Juego 5
+
+juego6:
+  id: 6
+  nombre: Juego 6
+
+juego7:
+  id: 7
+  nombre: Juego 7
+
+juego8:
+  id: 8
+  nombre: Juego 8
+
+juego9:
+  id: 9
+  nombre: Juego 9
+
+juego10:
+  id: 10
+  nombre: Juego 10
+
+juego11:
+  id: 11
+  nombre: Juego 11
+
+juego12:
+  id: 12
+  nombre: Juego 12
+
+juego13:
+  id: 13
+  nombre: Juego 13
+
+juego14:
+  id: 14
+  nombre: Juego 14
+
+juego15:
+  id: 15
+  nombre: Juego 15

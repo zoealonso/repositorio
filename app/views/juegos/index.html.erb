@@ -1,0 +1,61 @@
+<% content_for :opcion, 'juegos' %>
+<% content_for :titulo do %>
+	<% if @nombre.nil? %>
+		Todos los juegos
+	<% else %>
+		Resultados de la busqueda
+	<% end %>
+<% end %>
+<% content_for :subtitulo do %>
+	<% if @nombre.nil? %>
+		Este es el listado de todos los juegos registrados en esta web
+	<% else %>
+		Este es el listado de todos los juegos registrados en esta web que contienen &quot;<%= @nombre %>&quot;
+	<% end %>
+<% end %>
+
+<ol class="breadcrumb">
+  <li class="active">Juegos</li>
+</ol>
+
+
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Juego</th>
+			<th style="width: 18em" class="puntuacion">Jugadores</th>
+			<th style="width: 18em" class="puntuacion">Usuario</th>
+			<th style="width: 18em" class="puntuacion">Mejor puntuación</th>			
+		</tr>
+	</thead>
+	<tbody>
+		
+		<% @juegos.each do |juego| %>
+			<tr>
+				<td><%= link_to juego.nombre, puntuaciones_juego_path(juego.id) %></td>
+				<td class="puntuacion"><%= juego.jugadores %></td>
+				<td class="puntuacion">
+					<% puntuacion = juego.mejor_puntuacion %>
+					<% if !puntuacion.nil? %>
+						<%= puntuacion.usuario.nombre %>
+					<% end %>
+				</td>
+				<td class="puntuacion">
+					<% puntuacion = juego.mejor_puntuacion %>
+					<% if !puntuacion.nil? %>
+						<%= puntuacion.puntos %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+		
+	</tbody>
+</table>
+
+<% if @nombre.nil? %>
+	<%= render :partial => 'partials/paginador', :locals => {:url => root_path + '?'} %>
+<% else %>
+	<%= render :partial => 'partials/paginador', :locals => {:url => buscar_path(:nombre => @nombre) + '&'} %>
+<% end %>
+
+<p align="right">Número total de juegos: <%= Juego.count %> </p>

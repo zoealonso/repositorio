@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrivialProgramarWS</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="inicio">
+	<div class="contenedor-border-form-div">
+
+		<% if !notice.nil? %>
+			<div class="alert alert-success" role="alert">
+				<%= notice %>
+			</div>
+		<% end %>
+		<% if !alert.nil? %>
+			<div class="alert alert-danger" role="alert">
+				<%= alert %>
+			</div>
+		<% end %>
+
+		<div class="border-form-div">
+			<%= yield %>
+		</div>
+	</div>
+</body>
+</html>

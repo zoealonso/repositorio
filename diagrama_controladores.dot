@@ -1,0 +1,14 @@
+digraph controllers_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"ApplicationController" [shape=Mrecord, label="{ApplicationController|\l|\l|_layout\l}"]
+	"JuegosController" [shape=Mrecord, label="{JuegosController|index\lmis_juegos\l|\l|_layout\l}"]
+	"Servicio::JuegosController" [shape=Mrecord, label="{Servicio::JuegosController|registrar\l|\l|_layout\l}"]
+	"Servicio::PuntuacionesController" [shape=Mrecord, label="{Servicio::PuntuacionesController|mejores\lregistrar\l|\l|_layout\l}"]
+	"Servicio::ServicioController" [shape=Mrecord, label="{Servicio::ServicioController|\l|comprobar_token_acceso_filter\ltoken_acceso\l|_layout\l}"]
+	"Servicio::UsuariosController" [shape=Mrecord, label="{Servicio::UsuariosController|login\lregistrar\l|\l|_layout\lgenera_token\l}"]
+	"ApplicationController" -> "JuegosController" [label="", arrowhead="none", arrowtail="onormal"]
+	"Servicio::ServicioController" -> "Servicio::JuegosController" [label="", arrowhead="none", arrowtail="onormal"]
+	"Servicio::ServicioController" -> "Servicio::PuntuacionesController" [label="", arrowhead="none", arrowtail="onormal"]
+	"ApplicationController" -> "Servicio::ServicioController" [label="", arrowhead="none", arrowtail="onormal"]
+	"Servicio::ServicioController" -> "Servicio::UsuariosController" [label="", arrowhead="none", arrowtail="onormal"]
+}

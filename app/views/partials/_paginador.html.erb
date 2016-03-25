@@ -1,0 +1,9 @@
+<nav class="contenedor-paginador">
+	<ul class="pagination">
+		<li <%= @pagina <=1 ? 'class="disabled"'.html_safe : '' %>><%= link_to 'Anterior', url + 'pagina=' + (@pagina - 1).to_s %></li>
+		<% (1..@paginas).each do |pagina| %>
+			<li <%= pagina == @pagina ? 'class="active"'.html_safe : '' %>><%= link_to pagina, url + 'pagina=' + pagina.to_s %></li>
+		<% end %>
+		<li <%= @pagina == @paginas ? 'class="disabled"'.html_safe : '' %>><%= link_to 'Siguiente', url + 'pagina=' + (@pagina + 1).to_s %></li>
+	</ul>
+</nav>

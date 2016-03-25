@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+puntuacion1:
+  id: 1
+  puntos: 10
+  usuario_id: 1
+  juego_id: 1
+
+puntuacion2:
+  id: 2
+  puntos: 20
+  usuario_id: 2
+  juego_id: 1
+
+puntuacion3:
+  id: 3
+  puntos: 15
+  usuario_id: 1
+  juego_id: 1

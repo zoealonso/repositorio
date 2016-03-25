@@ -1,0 +1,34 @@
+es:
+  activerecord:
+    errors:
+      models:
+        usuario:
+          attributes:
+            name:
+              taken: El nombre introducido ya está siendo usando por otro usuario.
+              blank: El nombre no puede quedar vacío.
+            email:
+              taken: El email introducido ya está siendo usado por otro usuario.
+              blank: El email es obligatorio.
+            password:
+              too_short: La clave introducida es demasiado corta, debe tener al menos 4 caracteres.
+              blank: La clave es obligatoria.
+            password_confirmation:
+              blank: La confirmación de contraseña es obligatoria.
+              confirmation: Las contraseñas no coinciden.
+            current_password:
+              blank: La contraseña es obligatoria.
+              confirmation: La contraseña no es correcta.
+  devise:
+    registrations:
+      usuario:
+        updated: Actualización realizada correctamente.
+        signed_up: Usuario creado correctamente.
+    failure:
+      usuario:
+        not_found_in_database: El usuario no existe.
+        invalid: Usuario no válido.
+        unauthenticated: Es necesario iniciar sesión.
+    sessions:
+      usuario:
+        signed_in: Usuario logueado correctamente.

@@ -1,0 +1,106 @@
+<% content_for :opcion, 'mi_cuenta' %>
+<% content_for :titulo do %>
+	Mi Cuenta
+<% end %>
+<% content_for :subtitulo do %>
+	Desde aquí podrás modificar tu contraseña o borrar la cuenta
+<% end %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+		  
+  	<h3>Cambiar contraseña</h3>
+  	
+  	<div class="form-group <%= clase_error resource, :email %>">   
+  		<div class="row">
+			<div class="col-lg-6">  
+			    <label class="sr-only" for="usuario_email">Email</label>
+			    <div class="input-group">
+			    	<div class="input-group-addon">
+			    		<span class="glyphicon glyphicon-envelope"></span>
+			    	</div>
+			    	<%= f.email_field :email, :autofocus => true, :class => 'form-control', :placeholder => 'Email' %>
+			    </div>
+			</div>	
+		</div>
+		<%= errores resource, :email %>
+	</div>
+	
+	<div class="form-group <%= clase_error resource, :password %>">   
+		<div class="row">
+			<div class="col-lg-6">   
+			    <label class="sr-only" for="usuario_password">Contraseña</label>
+			    <div class="input-group">
+			    	<div class="input-group-addon">
+			    		<span class="glyphicon glyphicon-lock"></span>
+			    	</div>
+				    <%= f.password_field :password, autocomplete: "off", :class => 'form-control', :placeholder => 'Contraseña' %>
+			    </div>
+			</div>
+		</div>
+		<%= errores resource, :password %>
+	</div>
+	
+	<div class="form-group <%= clase_error resource, :password_confirmation %>">   
+		<div class="row">
+			<div class="col-lg-6">   
+			    <label class="sr-only" for="usuario_password_confirmation">Confirmar contraseña</label>
+			    <div class="input-group">
+			    	<div class="input-group-addon">
+			    		<span class="glyphicon glyphicon-lock"></span>
+			    	</div>
+				    <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control', :placeholder => 'Confirmar contraseña' %>
+			    </div>
+			</div>
+		</div>
+		<%= errores resource, :password_confirmation %>
+	</div>
+	
+	<div class="form-group <%= clase_error resource, :current_password %>">   
+		<div class="row">
+			<div class="col-lg-6">   
+			    <label class="sr-only" for="usuario_current_password">Contraseña</label>
+			    <div class="input-group">
+			    	<div class="input-group-addon">
+			    		<span class="glyphicon glyphicon-lock"></span>
+			    	</div>
+				    <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control', :placeholder => 'Contraseña actual' %>
+			    </div>
+			</div>
+		</div>
+		<%= errores resource, :current_password %>
+	</div>
+	
+	<div class="botones">
+	    <%= f.submit "Guardar", :class => 'btn btn-primary' %>
+	</div>
+	
+<% end %>
+	
+<%= form_tag(registration_path(resource_name), method: :delete) do %>
+
+	<h3>Cancelar mi cuenta</h3>
+	<h5>Si quieres eliminar la cuenta, introduce tu contraseña</h5>
+	
+	<div class="form-group <%= @falta_confirmacion.nil? ? '' : 'has-error' %>">   
+		<div class="row">
+			<div class="col-lg-6">   
+			    <label class="sr-only" for="usuario_password">Contraseña</label>
+			    <div class="input-group">
+			    	<div class="input-group-addon">
+			    		<span class="glyphicon glyphicon-lock"></span>
+			    	</div>
+				    <%= password_field_tag :password, nil, autocomplete: "off", :class => 'form-control', :placeholder => 'Contraseña' %>
+			    	
+			    </div>
+			</div>
+		</div>	
+		<% if !@falta_confirmacion.nil? %>
+    		<div class="help-block">La contraseña no coincide</div>
+    	<% end %>	
+	</div>
+	
+	<p><%= submit_tag "Cancelar mi cuenta", data: { confirm: "¿Estás seguro?" }, :class => 'btn btn-primary' %></p>
+	
+<% end %>
+	
+	
